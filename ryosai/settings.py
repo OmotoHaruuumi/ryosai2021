@@ -74,12 +74,8 @@ WSGI_APPLICATION = 'ryosai.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd306bnjlcffhkd',
-        'HOST': 'ec2-44-198-100-81.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'USER': 'spgsrirphesfxd',
-        'PASSWORD':'1fb071c2fe3b9c212fbc09fe365162a61283d7c99bc03ff249c796f595ab190b'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
