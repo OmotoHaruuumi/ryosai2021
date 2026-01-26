@@ -11,4 +11,4 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 EXPOSE 8000
-CMD ["gunicorn", "--bind=unix:/tmp/ryosai2021.sock", "ryosai.wsgi"]
+CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "ryosai.wsgi"]
