@@ -10,15 +10,13 @@
 ![Python](https://img.shields.io/badge/Python-3.8-3776AB?style=flat&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-3.2-092E20?style=flat&logo=django&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5-7952B3?style=flat&logo=bootstrap&logoColor=white)
-![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat&logo=sqlite&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)
-![Render](https://img.shields.io/badge/Render-46E3B7?style=flat&logo=render&logoColor=white)
 ![Gunicorn](https://img.shields.io/badge/Gunicorn-499848?style=flat&logo=gunicorn&logoColor=white)
 
 ---
 
-## デモ
+## 実際のWebサイト
 
 > デプロイ先URL: [https://kumano-ryosai-2021.com/](https://kumano-ryosai-2021.com/)
 
@@ -165,3 +163,4 @@ docker run -e PORT=8000 -p 8000:8000 ryosai
 | Swiper | カルーセル・スライダー |
 | GLightbox | ライトボックスギャラリー |
 | Isotope | フィルタリングレイアウト |
+
