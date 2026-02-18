@@ -69,28 +69,16 @@ CONCATENATE関数でHTMLタグを結合・生成
 
 コーディング工数を大幅に削減しつつ、非エンジニアのメンバーでも内容更新に参加できる体制を整えました。
 
-### 3. WhiteNoiseによるゼロコンフィグの静的ファイル配信
-
-本番環境での静的ファイル配信にはNginxやS3が必要になることが多いですが、
-**WhiteNoiseミドルウェア**を導入することでDjangoアプリ単体でファイル圧縮・キャッシュ制御・配信を完結させました。
-
-```python
-# settings.py
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-```
-
-これにより追加インフラなしでRenderへのデプロイが可能になっています。
-
-### 4. Dockerによる再現性の高い開発・デプロイ環境
+### 3. Dockerによる再現性の高い開発・デプロイ環境
 
 Dockerfileで環境を定義し、**開発環境と本番環境の差異をなくしました**。
-またポートを環境変数経由で受け取ることでRender等のPaaSに柔軟に対応しています。
+またポートを環境変数経由で受け取ることでクラウドPaaSに柔軟に対応しています。
 
 ```dockerfile
 CMD ["sh", "-c", "gunicorn --bind 0.0.0.0:$PORT ryosai.wsgi"]
 ```
 
-### 5. 開発環境と本番環境のDB切り替え
+### 4. 開発環境と本番環境のDB切り替え
 
 `dj-database-url` を活用し、環境変数`DATABASE_URL`の有無でSQLite（開発）とPostgreSQL（本番）を自動切り替えできる設計にしています。ローカルでは設定不要で即起動でき、本番はクラウドDBに接続されます。
 
@@ -155,7 +143,6 @@ docker run -e PORT=8000 -p 8000:8000 ryosai
 |---|---|
 | Django 3.2 | Webフレームワーク |
 | Gunicorn | WSGIアプリサーバー |
-| WhiteNoise | 静的ファイル配信・圧縮 |
 | dj-database-url | DB接続設定の環境変数管理 |
 | psycopg2 | PostgreSQLアダプター |
 | Pillow | 画像処理 |
